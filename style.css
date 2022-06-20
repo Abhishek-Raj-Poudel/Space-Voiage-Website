@@ -389,3 +389,13 @@ select {
 .dot-indicators > [aria-selected="true"] {
   background-color: hsl(var(--clr-white) / 1);
 }
+
+/* ------------------ */
+/* Page Specific */
+/* ------------------ */
+
+/* home */
+
+.home {
+  /* background-image: url(); */
+}
