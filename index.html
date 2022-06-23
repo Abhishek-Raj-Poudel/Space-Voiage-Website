@@ -21,7 +21,10 @@
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Space tourism website</title>
+    <!-- defer is used to load the script after the webpage is loaded -->
+    <script src="index.js" defer></script>
   </head>
+
   <body class="home">
     <header class="primary-header flex">
       <div>
@@ -35,8 +38,10 @@
         <span class="sr-only" aria-expanded="false">Menu</span>
       </button>
       <nav>
+        <!-- the data-visible is an attribute that is custom attribute -->
         <ul
           id="primary-navigation"
+          data-visible="false"
           class="primary-navigation underline-indicators flex"
         >
           <li class="active">
