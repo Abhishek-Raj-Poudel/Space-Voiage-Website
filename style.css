@@ -198,6 +198,21 @@ select {
   border: 0;
 }
 
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+  padding: 0.5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+}
+
 /* colors */
 
 .bg-dark {
@@ -328,7 +343,7 @@ select {
 /* primary-header */
 
 .logo {
-  margin: 2rem clamp(1.5rem, 5vw, 3.5rem);
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }
 
 .primary-header {
@@ -342,8 +357,8 @@ select {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: hsl(var(--clr-dark) / 0.95);
-  /* backdrop-filter: blur(1.5rem); */
+  background: hsl(var(--clr-white) / 0.05);
+  backdrop-filter: blur(1.5rem);
 }
 
 .primary-navigation a {
@@ -355,35 +370,32 @@ select {
   margin-right: 0.5em;
 }
 
-/* If your browser supports then do this or it will just do default */
-@supports (backdrop-filter: blur(1rem)) {
-  .primary-navigation {
-    background: hsl(var(--clr-white) / 0.05);
-    backdrop-filter: blur(1.5rem);
-  }
-}
-
 .mobile-nav-toggle {
   display: none;
 }
 
 @media (max-width: 35rem) {
   .primary-navigation {
-    --underline-gap: 2rem;
+    --underline-gap: 0.5rem;
     position: fixed;
     z-index: 1000;
-    /* Learn about inset */
     inset: 0 0 0 30%;
     list-style: none;
     padding: min(20rem, 15vh) 2rem;
     margin: 0;
     flex-direction: column;
     transform: translateX(100%);
-    transition: transform 250ms ease-in-out;
+    transition: transform 500ms ease-in-out;
   }
+
   .primary-navigation[data-visible="true"] {
     transform: translateX(0);
   }
+
+  .primary-navigation.underline-indicators > .active {
+    border: 0;
+  }
+
   .mobile-nav-toggle {
     display: block;
     position: absolute;
@@ -404,18 +416,14 @@ select {
   }
 
   .mobile-nav-toggle:focus-visible {
-    outline: 5px solid red;
+    outline: 5px solid white;
     outline-offset: 5px;
-  }
-
-  .primary-navigation.underline-indicators > .active {
-    border: 0;
   }
 }
 
 @media (min-width: 35em) {
   .primary-navigation {
-    padding-inline: clamp(3rem, 5vw, 7rem);
+    padding-inline: clamp(3rem, 7vw, 7rem);
   }
 }
 
@@ -432,7 +440,7 @@ select {
     position: relative;
     height: 1px;
     width: 100%;
-    margin-right: 2.5rem;
+    margin-right: -2.5rem;
     background: hsl(var(--clr-white) / 0.25);
     order: 1;
   }
@@ -486,26 +494,25 @@ select {
 }
 
 /* ----------------------------- */
-/* Page specific  Background     */
+/* Page specific background      */
 /* ----------------------------- */
 body {
   background-size: cover;
   background-position: bottom center;
 }
-
 /* home */
-
 .home {
   background-image: url(./assets/home/background-home-mobile.jpg);
 }
 
-@media (min-width: 35em) {
+@media (min-width: 35rem) {
   .home {
     background-position: center center;
     background-image: url(./assets/home/background-home-tablet.jpg);
   }
 }
-@media (min-width: 45em) {
+
+@media (min-width: 45rem) {
   .home {
     background-image: url(./assets/home/background-home-desktop.jpg);
   }
