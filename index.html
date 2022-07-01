@@ -19,12 +19,10 @@
     />
 
     <!-- Our custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>Frontend Mentor | Space tourism website</title>
-    <!-- defer is used to load the script after the webpage is loaded -->
-    <script src="index.js" defer></script>
+    <script src="navigation.js" defer></script>
   </head>
-
   <body class="home">
     <a class="skip-to-content" href="#main">Skip to content</a>
     <header class="primary-header flex">
@@ -39,7 +37,6 @@
         <span class="sr-only" aria-expanded="false">Menu</span>
       </button>
       <nav>
-        <!-- the data-visible is an attribute that is custom attribute -->
         <ul
           id="primary-navigation"
           data-visible="false"
@@ -81,8 +78,9 @@
       <div>
         <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
           So, you want to travel to
-          <span class="fs-900 ff-serif text-white d-block">Space</span>
+          <span class="d-block fs-900 ff-serif text-white">Space</span>
         </h1>
+
         <p>
           Let’s face it; if you want to go to space, you might as well genuinely
           go to outer space and not hover kind of on the edge of it. Well sit
@@ -92,8 +90,8 @@
       </div>
       <div>
         <a
-          href="#"
-          class="large-button uppercase ff-serif fs-600 text-dark bg-white"
+          href="destination.html"
+          class="large-button uppercase ff-serif text-dark bg-white"
           >Explore</a
         >
       </div>
